@@ -27,17 +27,17 @@
 <!-- PROJECT LOGO -->
 <br />
 
-<h3 align="center">A Typescript-Node-Docker Template</h3>
+<h3 align="center">A generic Docker sidecar</h3>
 
 <p align="center">
     A solid template to jumpstart your Typescript written nodejs projects running with Docker!
     <br />
-    <a href="https://github.com/johnweland/template-typescript-node-docker"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/johnweland/docker-sidecar"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/johnweland/template-typescript-node-docker/issues">Report Bug</a>
+    <a href="https://github.com/johnweland/docker-sidecar/issues">Report Bug</a>
     ·
-    <a href="https://github.com/johnweland/template-typescript-node-docker/issues">Request Feature</a>
+    <a href="https://github.com/johnweland/docker-sidecar/issues">Request Feature</a>
 </p>
 
 
@@ -73,13 +73,8 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-There are many great README templates available on GitHub, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+The idea here is to have a docker sidecar container that acts as a Unix Domain Socket server using node.js' `net` library. The sidecar will recieve a file descriptor and then take an action based on the data recieved.
 
-Here's why:
-* Inheriting a GitHub repository from this template saves time.
-* You shouldn't be doing the same tasks over and over like creating the basic files needed to run the sme types of projects.
-
-Of course, no one template will serve all projects since your needs may be different. This is only meant to be a very basic template to get up an running with.
 
 ### Built With
 
@@ -91,9 +86,6 @@ Of course, no one template will serve all projects since your needs may be diffe
 
 <!-- GETTING STARTED -->
 ## Getting Started
-
-Fork this repository to create a copy within your GitHub namespace. Then go to that repositories settings and tick the box that says 'Template Repository'. When creating future projects you can now select your copy of this repository as the startign template.
-
 ### Prerequisites
 
 * [Node.js](https://nodejs.org/)
@@ -113,7 +105,7 @@ docker-composer -f docker-compose.yml -f docker-compose.production.yml up -d
 <!-- ROADMAP -->
 ## Roadmap
 
-See the [open issues](https://github.com/johnweland/template-typescript-node-docker/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/johnweland/docker-sidecar/issues) for a list of proposed features (and known issues).
 
 
 
@@ -142,21 +134,21 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 John Weland - [Contact Info](https://github.com/johnweland)
 
-Project Link: [https://github.com/johnweland/template-typescript-node-docker](https://github.com/johnweland/template-typescript-node-docker)
+Project Link: [https://github.com/johnweland/docker-sidecar](https://github.com/johnweland/docker-sidecar)
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/johnweland/template-typescript-node-docker?style=for-the-badge
-[contributors-url]: https://github.com/johnweland/template-typescript-node-docker/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/johnweland/template-typescript-node-docker?style=for-the-badge
-[forks-url]: https://github.com/johnweland/template-typescript-node-docker/network/members
-[stars-shield]: https://img.shields.io/github/stars/johnweland/template-typescript-node-docker?style=for-the-badge
-[stars-url]: https://github.com/johnweland/template-typescript-node-docker/stargazers
-[issues-shield]: https://img.shields.io/github/issues/johnweland/template-typescript-node-docker?style=for-the-badge
-[issues-url]: https://github.com/johnweland/template-typescript-node-docker/issues
-[license-shield]: https://img.shields.io/github/license/johnweland/template-typescript-node-docker?style=for-the-badge
-[license-url]: https://github.com/johnweland/template-typescript-node-docker/blob/master/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/johnweland/docker-sidecar?style=for-the-badge
+[contributors-url]: https://github.com/johnweland/docker-sidecar/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/johnweland/docker-sidecar?style=for-the-badge
+[forks-url]: https://github.com/johnweland/docker-sidecar/network/members
+[stars-shield]: https://img.shields.io/github/stars/johnweland/docker-sidecar?style=for-the-badge
+[stars-url]: https://github.com/johnweland/docker-sidecar/stargazers
+[issues-shield]: https://img.shields.io/github/issues/johnweland/docker-sidecar?style=for-the-badge
+[issues-url]: https://github.com/johnweland/docker-sidecar/issues
+[license-shield]: https://img.shields.io/github/license/johnweland/docker-sidecar?style=for-the-badge
+[license-url]: https://github.com/johnweland/docker-sidecar/blob/master/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/johnweland
