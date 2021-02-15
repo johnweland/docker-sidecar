@@ -1,19 +1,16 @@
 version: '3.7'
 services:
   docker-sidecar:
+    image: docker-sidecar
     build:
       context: .
       dockerfile: Dockerfile
       target: base
     volumes:
-      - .src:home/node/app/src
+      - ./src:/home/node/app/src
       - ./nodemon.json:/home/node/app/nodemon.json
-      - /tmp/some-file.sock:/tmp/some-file.sock
-    container_name: ts-node-docker
-    expose:
-      - '80'
-    ports:
-      - 80:80
+      - /tmp/file.sock:/socket
+    container_name: docker-sidecar
     command: npm run dev
 
 # Useage Command
