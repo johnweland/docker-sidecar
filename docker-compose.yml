@@ -1,19 +1,27 @@
-version: '3.7'
+version: '3.8'
 services:
-  ts-node-docker:
+  docker-sidecar:
+    image: socket-server
     build:
       context: .
-      dockerfile: : Dockerfile
+      dockerfile: Dockerfile
       target: base
     volumes:
-      - .src:home/node/app/src
-      - ./nodemon.json:/home/node/app/nodemon.json
-    container_name: ts-node-docker
-    expose:
-      - '80'
-    ports:
-      - 80:80
+      - ./src:/home/node/docker-sidecar/src
+      - ./nodemon.json:/home/node/docker-sidecar/nodemon.json
+      - ./var/run:/socket_dir/:rw
+    container_name: socket-server
     command: npm run dev
+  client:
+    image: test-client 
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+      target: base
+    volumes: 
+      - ./var/run:/socket_dir/:rw 
+    container_name: test-client
+
 
 # Useage Command
-# docker-composer up -d
+# docker-composer up -d (runs detached)

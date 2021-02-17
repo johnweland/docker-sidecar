@@ -1,6 +1,6 @@
-version: '3.7'
+version: '3.8'
 services:
-  ts-node-docker:
+  docker-sidecar:
     build:
       target: production
     command: node build/index.js

@@ -1,6 +1,6 @@
 FROM node:14 as base
 
-WORKDIR /home/node/app
+WORKDIR /home/node/socket-sidecar
 
 COPY package.json ./
 
