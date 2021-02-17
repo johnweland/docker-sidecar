@@ -27,10 +27,10 @@
 <!-- PROJECT LOGO -->
 <br />
 
-<h3 align="center">A generic Docker sidecar</h3>
+<h3 align="center">A Docker sidecar UNIX Domain Socket Server</h3>
 
 <p align="center">
-    A solid template to jumpstart your Typescript written nodejs projects running with Docker!
+    A container for creating a unix domain socket server aswell as taking in and manipulating file descriptors
     <br />
     <a href="https://github.com/johnweland/docker-sidecar"><strong>Explore the docs »</strong></a>
     <br />
@@ -106,6 +106,48 @@ docker-composer -f docker-compose.yml -f docker-compose.production.yml up -d
 ## Roadmap
 
 See the [open issues](https://github.com/johnweland/docker-sidecar/issues) for a list of proposed features (and known issues).
+
+## Usage
+* The Socket server image is based on the [node:14](https://hub.docker.com/_/node) Docker image
+* The test client image is based on [ubuntu:latest](https://hub.docker.com/_/ubuntu) Docker image. The test-client also installs netcat via `apt-get`
+
+### Client Testing for Socket Server
+This is a simple Dockerfile and bash script to test that the UNIX domain socket is accepting connections.
+### Docker Compose
+1. builds the images for the socket-server && the test-client
+    ```bash
+    docker-compose build
+    ```
+
+
+2. Turns up the containers.
+    ```bash
+    docker-compose up
+    ```
+     Upon a successful connection you will see output from both the socket-server and the client like the example below.
+
+    ```output
+    socket-server | listening on /socket_dir/file.sock
+    socket-server | Buffer size : 0
+    socket-server | --------------- server details ---------------
+    socket-server | Server is listening at port undefined
+    socket-server | Server ip undefined
+    socket-server | Server is IP4/IP6 : undefined
+    socket-server | Server is listening at LOCAL port undefined
+    socket-server | Server LOCAL ip undefined
+    socket-server | ------------ remote client info --------------
+    socket-server | REMOTE Socket is listening at port' undefined
+    socket-server | REMOTE Socket ip : undefined
+    socket-server | REMOTE Socket is IP4/IP6 : undefined
+    socket-server | ----------------------------------------------
+    socket-server | Number of concurrent connections to the server :  1
+    socket-server | Bytes read : 13
+    socket-server | Bytes written : 0
+    socket-server | Data sent to server : Hello Socket
+    socket-server | 
+    socket-server | Data was flushed successfully from kernel buffer i.e written successfully!
+    client        | Data :: Hello Socket
+    ```
 
 
 
