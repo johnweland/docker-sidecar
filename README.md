@@ -27,7 +27,7 @@
 <!-- PROJECT LOGO -->
 <br />
 
-<h3 align="center">A Docker sidecar UNIX Domain Socket Server</h3>
+<h3 align="center">A Docker Sidecar UNIX Domain Socket Server</h3>
 
 <p align="center">
     A container for creating a unix domain socket server aswell as taking in and manipulating file descriptors
